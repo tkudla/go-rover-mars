@@ -66,5 +66,5 @@ func (rover *Rover) command(cmd string) {
 
 func (rover *Rover) state() string {
 
-	return fmt.Sprintf("%d %d %d", rover.x, rover.y, compassName(rover.direction))
+	return fmt.Sprintf("%d %d %s", rover.x, rover.y, compassName(rover.direction))
 }

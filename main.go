@@ -6,7 +6,12 @@ import (
 
 func main() {
 
-	rover1 := &Rover{
+	plateau := Plateau{
+		x: 5,
+		y: 5,
+	}
+
+	rover1 := Rover{
 		x:         1,
 		y:         2,
 		direction: compass["N"],
@@ -14,13 +19,17 @@ func main() {
 
 	rover1.command("LMLMLMLMM")
 
-	rover2 := &Rover{
+	plateau.place(rover1)
+
+	rover2 := Rover{
 		x:         3,
 		y:         3,
 		direction: compass["E"],
 	}
 
 	rover2.command("MMRMMRMRRM")
+
+	plateau.place(rover2)
 
 	fmt.Println(rover1.state())
 	fmt.Println(rover2.state())
